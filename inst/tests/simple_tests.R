@@ -20,3 +20,7 @@ my_fishtank = item_make("fishtank")
 set(my_fishtank,"place") = "living_room"
 set(my_fishtank,"non_Defined_property") = "living_room"
 Get(my_fishtank,"place")
+
+
+my_fishtank = item_make(type="fishtank")
+set(my_fishtank,"volume") = 100 

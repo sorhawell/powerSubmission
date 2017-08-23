@@ -1,3 +1,14 @@
+#' make a property
+#'
+#' @param value 
+#' @param value_class 
+#' @param name 
+#' @param ... 
+#'
+#' @return a property
+#' @export
+#'
+#' @examples property_make()
 property_make = function(value=NA,value_class=NULL,name=NULL,...) {
   new_property = value
   if(is.null(value_class)) {
@@ -10,12 +21,12 @@ property_make = function(value=NA,value_class=NULL,name=NULL,...) {
   return(new_property)
 }
 
-validate.property = function(x,newRules=NULL) {
-  if(!is.null(newRules)) Rules = newRules else{
-    Rules = list(
-      wattage = list(
-        Class= function(x) any(class(x) %in% c("numeric","integer")),
-        Test=function(x) is.finite(x) && x>=0
-   )
-  }
-}
+# validate.property = function(x,newRules=NULL) {
+#   if(!is.null(newRules)) Rules = newRules else{
+#     Rules = list(
+#       wattage = list(
+#         Class= function(x) any(class(x) %in% c("numeric","integer")),
+#         Test=function(x) is.finite(x) && x>=0
+#    )
+#   }
+# }

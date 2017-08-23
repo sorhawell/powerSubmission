@@ -1,4 +1,16 @@
-'set<-.item' =  function(x,property,value_class=NULL,value) {
+#' Get a property from something
+#'
+#' @param x 
+#' @param ... 
+#'
+#' @return "some value"
+#' @export
+#'
+#' @examples "bla"
+set = function(x) {UseMethod("set",x) }
+
+#' set a value of a property of an item
+set.item =  function(x,property,value_class=NULL,value) {
   if(is.null(value_class)) value_class = class(value) else value = as(value,value_class)
   available_properties = sapply(x$config,function(z) class(z)[1])
   match_ind = match(property,available_properties)[1]
